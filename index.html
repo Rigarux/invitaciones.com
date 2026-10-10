@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>¡Estás Invitado! | Mi Cumpleaños</title>
+    <link rel="icon" type="image/png" href="/snob.png" />
+    <link rel="stylesheet" href="/style.css?v=12" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Fredoka:wght@700&family=Pacifico&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="pattern-overlay"></div>
+    <div class="card-outer-shell">
+      <div class="card-wrapper">
+      <div class="glass-background"></div>
+      <header class="hero">
+        <div class="hero-content">
+          <h1 class="headline">
+            <span class="cumple-text">Cumpleaños de</span>
+            <span class="names-text">Martín y Natalia</span>
+          </h1>
+          
+          <div class="details-bento">
+            <div class="detail-card date-time-card">
+              <div style="height: 135px; display: flex; justify-content: center; margin-bottom: 0.5rem; margin-top: -0.5rem; width: 100%;">
+                <img src="/timenopy.png" alt="Fecha y Hora" style="height: 100%; max-width: 100%; object-fit: contain;" />
+              </div>
+              <div class="detail-text">
+                <span class="detail-label">Cuándo</span>
+                <span class="detail-value">Dom 18 Octubre<br>3:00 PM</span>
+              </div>
+            </div>
+
+            <div class="detail-card dress-code-card">
+              <div style="height: 135px; display: flex; justify-content: center; margin-bottom: 0.5rem; margin-top: -0.5rem; width: 100%;">
+                <img src="/Snopy_dres.png" alt="Dress Code" style="height: 100%; max-width: 100%; object-fit: contain;" />
+              </div>
+              <div class="detail-text">
+                <span class="detail-label">Dress Code</span>
+                <span class="detail-value">Semiformal</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://www.google.com/maps/search/?api=1&query=D'Leña+Restaurante+Zona+10+Guatemala" target="_blank" rel="noopener noreferrer" class="map-card" style="text-decoration: none; display: block; background: var(--blanco-puro); border: 3px solid var(--negro-ebano); border-radius: 20px; padding: 1rem; width: 100%; margin-bottom: 1.5rem; transition: all 0.3s ease; box-shadow: 6px 6px 0px rgba(164, 211, 242, 0.4); position: relative;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding: 0 0.5rem; position: relative; z-index: 2;">
+                  <span class="detail-label map-label" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--rojo-vino); font-weight: 800; transition: color 0.3s;">Dónde</span>
+                  <span class="detail-value map-title" style="font-weight: 900; font-size: 1.1rem; color: var(--negro-ebano); transition: color 0.3s;">D'leña Zona 10</span>
+              </div>
+              <div style="position: relative; border-radius: 12px; overflow: hidden; border: 2px solid var(--negro-ebano);">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.989241736766!2d-90.51143442425868!3d14.599688677097607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a3b7a22f556d%3A0x34f7c80d7ddcaecc!2sD'Le%C3%B1a%20Restaurante!5e0!3m2!1ses!2sgt!4v1791595509329!5m2!1ses!2sgt" width="100%" height="220" style="border:0; pointer-events: none; transition: all 0.4s ease;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                  <div class="map-overlay" style="background: rgba(255,255,255,0.85); backdrop-filter: blur(4px);">
+                    <span style="color: var(--blanco-puro); border: 3px solid var(--negro-ebano); box-shadow: 4px 4px 0px var(--negro-ebano);">Ver ubicación exacta</span>
+                  </div>
+              </div>
+          </a>
+
+          <div class="cta-wrapper">
+            <button class="primary-cta" id="rsvp-btn">
+              <span>Confirmar Asistencia</span>
+              <div class="cta-icon-wrapper">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </div>
+            </button>
+          </div>
+        </div>
+        <video preload="auto" autoplay loop muted playsinline class="snoopy-video" src="/snop.mov"></video>
+      </header>
+    </div>
+    </div>
+    <div class="modal-overlay" id="rsvp-modal">
+      <div class="modal-content">
+        <button class="close-btn" id="close-modal">&times;</button>
+        
+        <div id="modal-intro" class="modal-intro-wrapper">
+          <div class="video-container">
+            <h2 class="video-top-text">¡Increíbleee!</h2>
+            <video preload="auto" id="rsvp-video" src="/test.mp4" playsinline muted></video>
+            <p class="video-bottom-text">Ya queremos verte</p>
+          </div>
+        </div>
+
+        <div id="modal-form-content" class="modal-form-wrapper" style="display: none; opacity: 0; transition: opacity 0.5s ease;">
+          <h2 class="modal-title">¡Confirma tu Asistencia!</h2>
+          <p class="modal-subtitle">Nos encantaría que nos acompañaras a celebrar.</p>
+          
+          <div style="display: flex; justify-content: center; margin-bottom: 1rem;">
+            <img src="/partyyy.png" alt="Snoopy Fiesta" style="height: 140px; mix-blend-mode: multiply; object-fit: contain;" />
+          </div>
+          
+          <form id="rsvp-form" class="rsvp-form">
+            <div class="form-group">
+              <label for="rsvp-name">Nombre y Apellido</label>
+              <input type="text" id="rsvp-name" required placeholder="Ej: Charlie Brown" />
+            </div>
+            <div class="form-group">
+              <label for="rsvp-guests">Número de Acompañantes</label>
+              <select id="rsvp-guests">
+                <option value="0">Solo yo</option>
+                <option value="1">1 Acompañante</option>
+                <option value="2">2 Acompañantes</option>
+                <option value="3">3 Acompañantes</option>
+                <option value="4">4 Acompañantes</option>
+              </select>
+            </div>
+            <button type="submit" class="primary-cta submit-rsvp" id="submit-rsvp">
+              <span>Confirmar Asistencia</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/main.js?v=3"></script>
+  </body>
+</html>
